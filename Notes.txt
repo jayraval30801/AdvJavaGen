@@ -1,0 +1,58 @@
+Servlet:
+
+	Life cycle of servlet:
+		1) Servlet Loaded:
+				req for servlet is received by web container.
+		2) Servlet Instance is created:
+			 web container creates instance of servlet after loading servlet class.Servlet instance is created only ones in ife cycle.
+		3)Init method invoked :
+			Initialize servlet class
+		4)Service method call:
+			Web container call service method everytime when servlet req is received.
+		5) Destroy Method call:
+			Web container call destroy method before removing servlet instance from class.
+Web Terminology:
+	Http : Data commumnication protocol  used for client and server between commu.
+	Http request : Request sended by computer to web server that containes all sort of potentially inserting info.
+	
+	            Get   											vs  							post
+=>Limited Amount of data can sended                                              => No limit of  lasge amount of data send in body 
+	send in header showed	 
+=>No secured 																	 => Secure
+=>Bookmark																		 =>can not bookmark
+=>efficient than post															 => less efficient
+=>Idempotent second req is ignored                                               => Non idempotent
+	until res of first req is delivered 
+
+	
+Servlet container :
+			
+			Runtime Environment for JavaEE application.Client/User can req only static wrebpage for server.
+			
+Content Type:
+	
+Web.xml => Deployment Descriptor is xml file for which web container get info about the servlet to be invoked.
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
