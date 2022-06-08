@@ -8,8 +8,8 @@
 </head>
 <body>
 <form action="RegistrationServlet">
-First Name :<input type="text" name="firstName" value=""><br>
-Email : <input type="email" name="email" value=""><br>
+First Name :<input type="text" name="firstName" value="${firstNameValue}">${firstNameError}<br>
+Email : <input type="email" name="email" value="${emailValue}">${emailError}<br>
 Password : <input type="password" name="password"><br>
 Gender: Male<input type="radio" name="gender" checked="checked" >
 		Female<input type="radio" name="gender"><br>
