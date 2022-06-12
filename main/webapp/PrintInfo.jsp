@@ -11,9 +11,14 @@
 	String firstName  = (String)request.getAttribute("firstName");
 	String email = (String)request.getAttribute("email");
 	String password  = (String)	request.getAttribute("password");
+	String city = (String) request.getAttribute("city");
+	String hobby[] = (String[]) request.getAttribute("hobby");
 	%>
 First Name: <%=firstName%>
-Email : <%=email %>
-Password : <%=password %>
+<br>Email : <%=email %>
+<br>Password : <%=password %>
+<br>City : <%=city%>
+	
+<br>Hobby : <%=hobby[0]%>
 </body>
 </html>

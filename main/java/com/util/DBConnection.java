@@ -24,8 +24,7 @@ public class DBConnection  {
 			}
 			catch(Exception e)
 			{
-				System.out.println("Ex:=>"+e.getMessage());
-				
+				System.out.println("Ex:=>"+e.getMessage());	
 			}
 			if(con==null)
 			{

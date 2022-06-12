@@ -20,7 +20,7 @@ public class RegistrationServlet extends HttpServlet{
 			String password = req.getParameter("password");
 			String gender = req.getParameter("gender");
 			String city = req.getParameter("city");
-			
+			String hobby[] = req.getParameterValues("hobby");
 			boolean isError = false;
 			String firstNamePattern  = "^[a-zA-Z]+$";
 					Pattern pFn = Pattern.compile(firstNamePattern);
@@ -44,7 +44,7 @@ public class RegistrationServlet extends HttpServlet{
 			{
 					isError = true;
 				req.setAttribute("emailError ", "Please enter Email");
-			}	else if(pFn.matcher(email).matches() == false)
+			}	else if(p.matcher(email).matches() == false)
 			{
 				isError = true;
 				req.setAttribute("emailError", "Please Enter valid email");
@@ -52,9 +52,31 @@ public class RegistrationServlet extends HttpServlet{
 			}
 			else
 			{
+				
 				req.setAttribute("emailValue",email);
 			}
-			
+			if(city == null || city.equals("-1"))
+			{
+				isError = true;
+				req.setAttribute("cityError", "Please Select the city");
+			}
+			else
+			{
+				req.setAttribute("cityValue", city);
+			}
+			if(hobby == null || hobby.length <= 1)
+			{
+				isError = true;
+				req.setAttribute("hobbyError", "Please select atleast two hobbies");
+			}else
+			{
+				String hb = "";
+				for(int i =0;i<hobby.length;i++)
+				{
+					hb = hb+hobby[i];
+				}
+				req.setAttribute("hobbyValue",hb);
+			}
 				RequestDispatcher rd = null;
 				if(isError == true)
 				{
@@ -65,7 +87,8 @@ public class RegistrationServlet extends HttpServlet{
 					req.setAttribute("firstName", firstName);
 					req.setAttribute("email", email);
 					req.setAttribute("password", password);
-					
+					req.setAttribute("city", city);
+					req.setAttribute("hobby", hobby[0]);
 				}
 				rd.forward(req, res);
 		}
