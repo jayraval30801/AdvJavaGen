@@ -33,10 +33,45 @@ Content Type:
 	
 Web.xml => Deployment Descriptor is xml file for which web container get info about the servlet to be invoked.
 
+===============================================================================================================
+Servlet : Logic 
+Controller : Methods 
+Dao (Data Access object) : Insertion Deletion Update View Methods  = > Dao.java 
+Util : Database Connection 
+Bean : 
+Create   => 
+Database objection use Program
+Getter and Setter => Value 
 			
-			
-			
-			
+==============================================================================================================
+How to insert data in database using jsp/servlet...
+
+1) Jsp page create => webapp=>new=>.jsp file
+2) jsp page => form tag => action => servlet-name(Ex.addStudentServlet) =>Parameters pass(firstname , email ,password) => button(submit)=>submit press servlet redirect
+3) com => controller folder=> class file => create servlet (addStudentServlet) 
+4) WEB_INF => web.xml file => servlet-mapping => <servlet ,servlet-mapping , url-pattern.
+5) addStudentServlet => request.getparameter(firstname,email,password)
+6) Dao => file => StudentDao => create method => insertstudent(firstname,email,password) => DBConnection.openconnection(con object) => mysql=> Prepa state(object) =>query(insert into student (firstname,email,password) value (?,?,?));
+6) setString(1,firstname) = >email => pass set => (i=pstmt.executeQuery()/executeUpdate() => query for display data/update for update/insert/delete) then return the i variable 
+6) Exception handle try - catch (exception e)
+7) Servlet => i.insertStudent(firstname,email,password).=> RequestDispatcher => Jsp => i=1 => success.jsp else fail.jsp 
+8) Goto AddStudent.jsp page then run it on server.and check the data is inserted or not.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			
 			
 			

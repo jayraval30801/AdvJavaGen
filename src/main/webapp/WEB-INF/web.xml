@@ -17,4 +17,20 @@
   			<servlet-name>NumberServlet1</servlet-name>
   			<url-pattern>/NumberServlet1</url-pattern>
   </servlet-mapping>
+  <servlet>
+  			<servlet-class>com.controller.RegistrationServlet</servlet-class>
+  			<servlet-name>RegistrationServlet</servlet-name>
+  </servlet>
+  <servlet-mapping>
+  			<servlet-name>RegistrationServlet</servlet-name>
+  			<url-pattern>/RegistrationServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  			<servlet-class>com.controller.AddStudentServlet</servlet-class>
+  			<servlet-name>AddStudentServlet</servlet-name>
+  </servlet>
+  <servlet-mapping>
+  			<servlet-name>AddStudentServlet</servlet-name>
+  			<url-pattern>/AddStudentServlet</url-pattern>
+  </servlet-mapping>
 </web-app>	

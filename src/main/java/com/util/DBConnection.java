@@ -15,7 +15,7 @@ public class DBConnection  {
 			
 			String driver = "com.mysql.cj.jdbc.Driver";
 	    	String url  ="jdbc:mysql://localhost:3306/genadvjava";
- 			String password = "";
+ 			String password = "root";
 			String username = "root";
 			Connection con = null;
 			try {
@@ -24,8 +24,7 @@ public class DBConnection  {
 			}
 			catch(Exception e)
 			{
-				System.out.println("Ex:=>"+e.getMessage());
-				
+				System.out.println("Ex:=>"+e.getMessage());	
 			}
 			if(con==null)
 			{
