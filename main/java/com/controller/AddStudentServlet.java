@@ -11,10 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.StudentDao;
+
 
 public class AddStudentServlet extends HttpServlet {
 	
-		/**
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -26,30 +28,8 @@ public class AddStudentServlet extends HttpServlet {
 				String email = request.getParameter("email");
 				String password = request.getParameter("password");
 				System.out.println("Servlet Called......");
-				String driver = "com.mysql.cj.jdbc.Driver";
-				String url = "jdbc:mysql://localhost:3306/genadvjava";
-				String username="root";
-				String password1 = "";
-				int i = -1;
-				try
-				{
-					Class.forName(driver);
-					Connection con = DriverManager.getConnection(url,username,password1);
-					//statement , pritable statement,callable statement;
-					PreparedStatement pstmt = con.prepareStatement("insert into student (firstname,email,password) values (?,?,?)");
-					pstmt.setString(1, firstName);
-					pstmt.setString(2, email);
-					pstmt.setString(3, password);
-					i= pstmt.executeUpdate();
-					
-					//executeUpdate  =>update,delete,insert
-					//executeQuery => show data
- 				}
-				catch(Exception e)
-				{
-					e.printStackTrace();
-				}
-				
+				StudentDao stdDao  = new StudentDao();
+				int i = stdDao.insertStudent(firstName, email, password);
 				RequestDispatcher rd = null;
 				
 				if(i == 1)
@@ -59,6 +39,7 @@ public class AddStudentServlet extends HttpServlet {
 				}else
 				{
 					rd  = request.getRequestDispatcher("Fail.jsp");
+					
 				}
 				rd.forward(request,response);
 		}

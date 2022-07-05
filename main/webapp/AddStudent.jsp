@@ -7,11 +7,10 @@
 <title>Add Student</title>
 </head>
 <body>
-
 	<form action="AddStudentServlet">
-			FirstName:<input type="text" name="firstName">
-			Email : <input type="email" name="email">
-			Password : <input type="password" name="password">
+			FirstName:<input type="text" name="firstName"><br>
+			Email : <input type="email" name="email"><br>
+			Password : <input type="password" name="password"><br>
 			<input type="submit" value="signup">
 	</form>
 </body>

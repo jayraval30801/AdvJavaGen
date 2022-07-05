@@ -8,5 +8,6 @@
 </head>
 <body>
 Successfully inserted
+<a href="ListStudentServlet">List Of Student</a>
 </body>
 </html>
