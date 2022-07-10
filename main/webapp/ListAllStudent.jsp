@@ -17,6 +17,7 @@
 				<th>FirstName</th>
 				<th>Email</th>
 				<th>Password</th>
+				<th>Action</th>
 		</tr>
 		<%
 			while(rs.next())
@@ -25,13 +26,14 @@
 				String firstName = rs.getString("firstName");
 				String email = rs.getString("email");
 				String password = rs.getString("password");
-		
 		%>
 		<tr>
 				<td><%=studentId%></td>
 				<td><%=firstName%></td>
 				<td><%=email%></td>
-				<td><%=password%></td>				
+				<td><%=password%></td>
+				<td><a href="DeleteStudentServlet?studentId=<%=studentId%>">Delete</a>
+				<a href="EditStudentServlet?studentId=<%=studentId%>">Edit</a></td>			
 		</tr>
 		<%
 				}

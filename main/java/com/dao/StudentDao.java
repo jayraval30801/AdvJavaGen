@@ -42,4 +42,54 @@ public class StudentDao {
 			}
 		return rs;
 	}
+	public void deleteStudent(int studentId)
+	{
+		try(Connection con = DBConnection.openConnection();
+				PreparedStatement pstmt = con.prepareStatement("delete from student where studentId  = ?");
+			)
+		{
+			pstmt.setInt(1, studentId);
+			pstmt.executeUpdate();
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public ResultSet getStudentById(int studentId)
+	{
+		try {
+			Connection con = DBConnection.openConnection();
+			PreparedStatement pstmt = con.prepareStatement("select * from student where studentId = ?");
+			pstmt.setInt(1, studentId);
+			ResultSet rs = pstmt.executeQuery();
+			return rs;
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public void updateStudent(String firstName,String email,String password,int studentId)
+	{
+		try(Connection con = DBConnection.openConnection();
+				PreparedStatement pstmt = con.prepareStatement("update student set firsName= ?,email= ? ,password = ? where studentId = ?");
+			)
+		{
+			pstmt.setString(1, firstName);
+			pstmt.setString(2,email);
+			pstmt.setString(3,password);
+			pstmt.setInt(4, studentId);
+			 int i = pstmt.executeUpdate();
+			if(i == 1)
+			{
+				System.out.println("Update successfull");
+			}else
+			{
+				System.out.println("Updation failed");
+			}
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 }
