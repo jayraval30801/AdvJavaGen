@@ -7,7 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-Successfully inserted
-<a href="ListStudentServlet">List Of Student</a>
+<form action="AddProductServlet">
+ProductName: <input type="text" name="productName"><br>
+Price : <input type="number" name="price"><br>
+Qty :<input type="number" name="qty"><br>
+<input type="submit" value="submit">
+</form>
 </body>
 </html>

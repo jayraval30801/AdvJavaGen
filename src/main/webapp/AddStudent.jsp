@@ -15,3 +15,10 @@
 	</form>
 </body>
 </html>
+<!-- 
+Product : 
+	Productname text
+	ProductId  :
+	Qty  : Number 
+	Price  : Number 
+	 -->
