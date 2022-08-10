@@ -20,7 +20,8 @@ public class AddProductServlet  extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 		@Override
-		protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+		protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException 
+		{
 			String productName = req.getParameter("productName");
 			int price  = Integer.parseInt(req.getParameter("price"));
 			int qty = Integer.parseInt(req.getParameter("qty"));
@@ -31,7 +32,7 @@ public class AddProductServlet  extends HttpServlet{
 			
 			if(i == 1)
 			{
-				rd  = req.getRequestDispatcher("Success.jsp");
+				rd  = req.getRequestDispatcher("Success1.jsp");
 			}else
 			{
 				rd  = req.getRequestDispatcher("Fail.jsp");

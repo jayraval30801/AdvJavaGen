@@ -10,7 +10,7 @@
 <form action="AddProductServlet">
 ProductName: <input type="text" name="productName"><br>
 Price : <input type="number" name="price"><br>
-Qty :<input type="number" name="qty"><br>
+Quantity :<input type="number" name="qty"><br>
 <input type="submit" value="submit">
 </form>
 </body>

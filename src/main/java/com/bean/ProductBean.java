@@ -5,6 +5,7 @@ public class ProductBean {
 	int productId;
 	String productName;
 	int price;
+	int qty;
 	public int getProductId() {
 		return productId;
 	}
@@ -29,5 +30,5 @@ public class ProductBean {
 	public void setQty(int qty) {
 		this.qty = qty;
 	}
-	int qty;
+
 }
