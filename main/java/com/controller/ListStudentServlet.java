@@ -16,6 +16,11 @@ import com.mysql.cj.xdevapi.Result;
 @WebServlet("/ListStudentServlet")
 public class ListStudentServlet extends HttpServlet{
 
+		/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 		@Override
 		protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 				
@@ -23,8 +28,6 @@ public class ListStudentServlet extends HttpServlet{
 			ResultSet rs = stdao.getAllStudent();
 			req.setAttribute("rs", rs);
 			RequestDispatcher rd = req.getRequestDispatcher("ListAllStudent.jsp");
-			rd.forward(req, res);
-			
-			
+			rd.forward(req, res);			
 	}
 }

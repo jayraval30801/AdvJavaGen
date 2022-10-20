@@ -33,4 +33,33 @@
   			<servlet-name>AddStudentServlet</servlet-name>
   			<url-pattern>/AddStudentServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+		<servlet-name>SignupServlet2</servlet-name>
+		<servlet-class>com.controller.SignupServlet2</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>SignupServlet2</servlet-name>
+		<url-pattern>/SignupServlet2</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>SignupFilter</filter-name>
+		<filter-class>com.filter.SignupFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>SignupFilter</filter-name>
+		<servlet-name>SignupServlet2</servlet-name>
+	</filter-mapping>
+	<filter>
+			<filter-name>EmailValidationFilter</filter-name>	
+			<filter-class>com.filter.EmailValidationFilter</filter-class>
+	</filter>
+	<filter-mapping>
+			<filter-name>EmailValidationFilter</filter-name>
+			<servlet-name>SignupServlet2</servlet-name>
+	</filter-mapping>
+	
+	<session-config>
+			<session-timeout>3</session-timeout>
+	</session-config>  
 </web-app>	

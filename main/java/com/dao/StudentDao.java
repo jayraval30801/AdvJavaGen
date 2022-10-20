@@ -72,7 +72,7 @@ public class StudentDao {
 	public void updateStudent(String firstName,String email,String password,int studentId)
 	{
 		try(Connection con = DBConnection.openConnection();
-				PreparedStatement pstmt = con.prepareStatement("update student set firsName= ?,email= ? ,password = ? where studentId = ?");
+				PreparedStatement pstmt = con.prepareStatement("update student set firstName=?,email= ? ,password = ? where studentId = ?");
 			)
 		{
 			pstmt.setString(1, firstName);

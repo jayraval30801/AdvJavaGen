@@ -1,7 +1,6 @@
 package com.controller;
 
 import java.io.IOException;
-import java.sql.ResultSet;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,10 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.dao.StudentDao;
+import com.dao.ProductDao;
 
-@WebServlet("/EditStudentServlet")
-public class EditStudentServlet extends HttpServlet{
+@WebServlet("/DeleteProductServlet")
+public class DeleteProductServlet extends HttpServlet {
+	
 	
 		/**
 	 * 
@@ -23,13 +23,12 @@ public class EditStudentServlet extends HttpServlet{
 		@Override
 		protected void service(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException 
 		{
-	
-			int studentId  = Integer.parseInt(req.getParameter("studentId"));
-			StudentDao stdDao = new StudentDao();
-			ResultSet rs = stdDao.getStudentById(studentId);
-			req.setAttribute("rs", rs);
-			RequestDispatcher rd = req.getRequestDispatcher("EditStudent.jsp");
+			int productId  = Integer.parseInt(req.getParameter("productId"));
+			ProductDao pDao = new ProductDao();
+			
+			pDao.deleteProduct(productId);
+			RequestDispatcher rd= req.getRequestDispatcher("ListProductServlet");
 			rd.forward(req, res);
+	
 		}
-		
 }
